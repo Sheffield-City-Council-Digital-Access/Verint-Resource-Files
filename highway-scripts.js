@@ -1488,7 +1488,7 @@ var mapParams = {
     radiusUnit: "esriMeters",
   }, //default query circle geometry properties
   hostUrl: "https://" + $(location).attr("hostname"),
-  //hostUrl: "https://forms-sheffieldcc.squiz.cloud"
+  //hostUrl: "https://forms-sheffield.squiz.cloud"
 };
 
 var featureLayers = {
