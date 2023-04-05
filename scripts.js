@@ -1777,3 +1777,14 @@ function customerparamsfunction() {
 //Finish: Customer Params
 
 //Finish: Params
+
+function capitalisation(id, value) {
+  const string = capitalizeString(value);
+  const inputField = document.querySelector("#" + id);
+  inputField.value = string;
+}
+
+function capitalizeString(str) {
+  str = str.toLowerCase();
+  return str.replace(/\b\w/g, (match) => match.toUpperCase());
+}
