@@ -571,13 +571,13 @@ function updateObject() {
     let hubperson = KDF.getVal("txt_personpin");
     let agentId = KDF.getVal("txt_userid");
     let hublink =
-      "https://forms-qa-sheffieldcc.squiz.cloud/CRMHousing/default.asp?screenId=personDetails&crmAgentId=" +
+      "https://forms-sheffield.squiz.cloud/CRMHousing/default.asp?screenId=personDetails&crmAgentId=" +
       agentId +
       "&hmsPersonId=" +
       hubperson +
       "&refreshParam=<xref1>&dummy=<!2!/CurrentTime/Time!>";
     let hublink2 =
-      "https://forms-qa-sheffieldcc.squiz.cloud/CRMHousing/default.asp?screenId=GLO8&entityType=PERSON&eventCategory=PERSONNOTES&entityId1=" +
+      "https://forms-sheffield.squiz.cloud/CRMHousing/default.asp?screenId=GLO8&entityType=PERSON&eventCategory=PERSONNOTES&entityId1=" +
       hubperson +
       "&crmAgentId=" +
       agentId +
