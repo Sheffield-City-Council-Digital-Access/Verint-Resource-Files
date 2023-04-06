@@ -940,62 +940,6 @@ function showHistoryButtons() {
   }
 }
 
-function setChannelType() {
-  if (KDF.getVal("txt_agentteam") === "07000000003") {
-    if (
-      [
-        "Burngreave",
-        "Crystal Peaks",
-        "Darnall",
-        "Firth Park",
-        "Chapeltown",
-        "Hillsborough",
-        "Howden House Firstpoint",
-        "Manor Library",
-        "Jordanthorpe",
-        "Low Edges",
-        "Newfield Green",
-        "Stocksbridge",
-        "Wordsworth Avenue",
-        "The Sheffield Property Shop",
-      ].includes(KDF.getVal("txt_agentlocation"))
-    ) {
-      KDF.setVal("le_channel", "face_to_face");
-    } else {
-      KDF.setVal("le_channel", "voice_in");
-    }
-  } else if (KDF.getVal("txt_agentteam") === "07000000000") {
-    if (
-      [
-        "Burngreave",
-        "Crystal Peaks",
-        "Darnall",
-        "Firth Park",
-        "Chapeltown",
-        "Hillsborough",
-        "Howden House Firstpoint",
-        "Manor Library",
-        "Jordanthorpe",
-        "Low Edges",
-        "Newfield Green",
-        "Stocksbridge",
-        "Wordsworth Avenue",
-        "The Sheffield Property Shop",
-      ].includes(KDF.getVal("txt_agentlocation"))
-    ) {
-      KDF.setVal("le_channel", "face_to_face");
-    } else {
-      KDF.setVal("le_channel", "voice_in");
-    }
-  } else if (KDF.getVal("txt_agentteam") === "07000000004") {
-    KDF.setVal("le_channel", "email_in");
-  } else if (KDF.getVal("txt_agentteam") === "07000000001") {
-    KDF.setVal("le_channel", "face_to_face");
-  } else {
-    KDF.setVal("le_channel", "voice_in");
-  }
-}
-
 function formReady(event, kdf) {
   //searchUserID();
 
