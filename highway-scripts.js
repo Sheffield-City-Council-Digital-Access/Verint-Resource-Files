@@ -56,9 +56,9 @@ function submitFormHighways() {
     }
 
     if (
-      KDF.getVal("txt_agentteam") === "backoffice@crm.com" ||
-      KDF.getVal("txt_agentteam") === "firstpoint@crm.com" ||
-      KDF.getVal("txt_agentteam") === "admin@crm.com"
+      KDF.getVal("txt_agentteam") === "07000000004" ||
+      KDF.getVal("txt_agentteam") === "07000000001" ||
+      KDF.getVal("txt_agentteam") === "07000000000"
     ) {
       KDF.setVal("txt_channel", "EMAI");
       KDF.setVal("txt_receivedby", "CSC");
@@ -568,7 +568,7 @@ function updateObject() {
 
   if (
     KDF.getVal("txt_personpin") !== "" &&
-    KDF.getVal("txt_agentteam") === "housing@crm.com"
+    KDF.getVal("txt_agentteam") === "07000000003"
   ) {
     $(".housingHubScrean").show();
     $(".updateRecord").hide();
@@ -803,7 +803,7 @@ function showWarningMessages() {
 }
 
 function showFaxingInfomration() {
-  if (KDF.getVal("txt_agentteam") === "housing@crm.com") {
+  if (KDF.getVal("txt_agentteam") === "07000000003") {
     KDF.showSection("area_ahtmcallingtransfer");
   } else {
     KDF.hideSection("area_ahtmcallingtransfer");
@@ -947,20 +947,7 @@ function showHistoryButtons() {
 }
 
 function setChannelType() {
-  if (
-    [
-      "housing@crm.com",
-      "housingsolutionsgeneric@sheffield.gov.uk",
-      "neighbourhoods+burngreave&shiregreen@sheffield.gov.uk",
-      "neighbouhood+city&west@sheffield.gov.uk",
-      "neighbourhoods+east@sheffield.gov.uk",
-      "neighbourhoods+firthppark&southey@sheffield.gov.uk",
-      "neighbourhoods+north@sheffield.gov.uk",
-      "salaih.zahir@sheffield.gov.uk",
-      "homesarease@sheffield.gov.uk",
-      "hrmcustomerservices@sheffield.gov.uk",
-    ].includes(KDF.getVal("txt_agentteam"))
-  ) {
+  if (KDF.getVal("txt_agentteam") === "07000000003") {
     if (
       [
         "Burngreave",
@@ -983,10 +970,7 @@ function setChannelType() {
     } else {
       KDF.setVal("le_channel", "voice_in");
     }
-  } else if (
-    KDF.getVal("txt_agentteam") === "admin@crm.com" ||
-    KDF.getVal("txt_agentteam") === "utt@sheffield.gov.uk"
-  ) {
+  } else if (KDF.getVal("txt_agentteam") === "07000000000") {
     if (
       [
         "Burngreave",
@@ -1009,9 +993,9 @@ function setChannelType() {
     } else {
       KDF.setVal("le_channel", "voice_in");
     }
-  } else if (KDF.getVal("txt_agentteam") === "backoffice@crm.com") {
+  } else if (KDF.getVal("txt_agentteam") === "07000000004") {
     KDF.setVal("le_channel", "email_in");
-  } else if (KDF.getVal("txt_agentteam") === "firstpoint@crm.com") {
+  } else if (KDF.getVal("txt_agentteam") === "07000000001") {
     KDF.setVal("le_channel", "face_to_face");
   } else {
     KDF.setVal("le_channel", "voice_in");
@@ -1412,7 +1396,7 @@ function customAction(action, response) {
           "ahtm_property_clickcomment",
           '<h3 id="NoProperty">Property not found, type it in manually and contact the admin team so they can update the property database.</h3>'
         );
-        if (KDF.getVal("txt_agentteam") !== "housing@crm.com") {
+        if (KDF.getVal("txt_agentteam") !== "07000000003") {
           KDF.showSection("area_property_not_found");
         }
       }
@@ -1420,7 +1404,7 @@ function customAction(action, response) {
     } else {
       KDF.showSection("area_property_searchresults");
       if (propclick >= 2) {
-        if (KDF.getVal("txt_agentteam") !== "housing@crm.com") {
+        if (KDF.getVal("txt_agentteam") !== "07000000003") {
           KDF.showSection("area_property_not_found");
         }
       }
