@@ -568,20 +568,27 @@ function updateObject() {
 
   if (
     KDF.getVal("txt_personpin") !== "" &&
-    KDF.getVal("txt_agentteam") === "07000000003"
+    (KDF.getVal("txt_agentteam").toLowerCase() === "07000000000" ||
+      KDF.getVal("txt_agentteam").toLowerCase() === "07000000001" ||
+      KDF.getVal("txt_agentteam").toLowerCase() === "07000000002" ||
+      KDF.getVal("txt_agentteam").toLowerCase() === "07000000003" ||
+      KDF.getVal("txt_agentteam").toLowerCase() === "07000000004" ||
+      KDF.getVal("txt_agentteam").toLowerCase() === "07000000007" ||
+      KDF.getVal("txt_agentteam").toLowerCase() === "07000000011" ||
+      KDF.getVal("txt_agentteam").toLowerCase() === "07000000012")
   ) {
     $(".housingHubScrean").show();
     $(".updateRecord").hide();
     let hubperson = KDF.getVal("txt_personpin");
     let agentId = KDF.getVal("txt_userid");
     let hublink =
-      "https://forms-sheffield.squiz.cloud/CRMHousing/default.asp?screenId=personDetails&crmAgentId=" +
+      "https://forms-qa-sheffieldcc.squiz.cloud/CRMHousing/default.asp?screenId=personDetails&crmAgentId=" +
       agentId +
       "&hmsPersonId=" +
       hubperson +
       "&refreshParam=<xref1>&dummy=<!2!/CurrentTime/Time!>";
     let hublink2 =
-      "https://forms-sheffield.squiz.cloud/CRMHousing/default.asp?screenId=GLO8&entityType=PERSON&eventCategory=PERSONNOTES&entityId1=" +
+      "https://forms-qa-sheffieldcc.squiz.cloud/CRMHousing/default.asp?screenId=GLO8&entityType=PERSON&eventCategory=PERSONNOTES&entityId1=" +
       hubperson +
       "&crmAgentId=" +
       agentId +
@@ -602,20 +609,7 @@ function updateObject() {
 
     KDF.setVal("ahtm_HUBpersonnotes", ifrm2);
   } else {
-    if (
-      $(location).attr("hostname").substring(6, 8) === "de" &&
-      KDF.getVal("txt_customerid") === "101000612659"
-    ) {
-      $(".anonymousRecord").show();
-    } else if (
-      $(location).attr("hostname").substring(6, 8) === "qa" &&
-      KDF.getVal("txt_customerid") === "101000000791"
-    ) {
-      $(".anonymousRecord").show();
-    } else if (
-      $(location).attr("hostname").substring(6, 8) === "sh" &&
-      KDF.getVal("txt_customerid") === "101001971935"
-    ) {
+    if (KDF.getVal("txt_customerid") === "101001971935") {
       $(".anonymousRecord").show();
     } else {
       $(".housingHubScrean").hide();
