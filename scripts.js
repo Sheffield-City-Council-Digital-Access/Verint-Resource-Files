@@ -1787,9 +1787,10 @@ function customerparamsfunction() {
 //Finish: Params
 
 function capitalisation(id, value) {
-  const string = capitalizeString(value);
-  const inputField = document.querySelector("#" + id);
-  inputField.value = string;
+  return;
+  // const string = capitalizeString(value);
+  // const inputField = document.querySelector("#" + id);
+  // inputField.value = string;
 }
 
 const capitalizeString = (str) => {
