@@ -1792,7 +1792,7 @@ function capitalisation(id, value) {
   inputField.value = string;
 }
 
-function capitalizeString(str) {
+const capitalizeString = (str) => {
   str = str.toLowerCase();
   return str.replace(/\b\w/g, (match) => match.toUpperCase());
-}
+};

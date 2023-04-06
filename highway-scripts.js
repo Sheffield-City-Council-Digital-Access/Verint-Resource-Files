@@ -317,17 +317,6 @@ function setBriefDetails() {
     }
 }
 
-function capitalisation(id, value) {
-  const string = capitalizeString(value);
-  const inputField = document.querySelector("#" + id);
-  inputField.value = string;
-}
-
-function capitalizeString(str) {
-  str = str.toLowerCase();
-  return str.replace(/\b\w/g, (match) => match.toUpperCase());
-}
-
 function searchObjectType(le_object_type) {
   KDF.setVal("le_object_type", le_object_type);
 
