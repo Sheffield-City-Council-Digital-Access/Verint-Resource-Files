@@ -2365,6 +2365,7 @@ function treeFeatureSetHandler(marker, featureSet) {
   if (featureSet.features.length >= 1) {
     var asset = featureSet.features[0];
     var attributes = asset.attributes;
+    console.log(attributes);
     KDF.setVal("object_id", attributes["objectid"]);
     KDF.setVal("longitude_x", marker.geometry.x);
     KDF.setVal("latitude_y", marker.geometry.y);
@@ -2425,6 +2426,7 @@ function vegetationFeatureSetHandler(marker, featureSet) {
   if (featureSet.features.length >= 1) {
     var asset = featureSet.features[0];
     var attributes = asset.attributes;
+    console.log(attributes);
     KDF.setVal("object_id", attributes["objectid"]);
     KDF.setVal("longitude_x", marker.geometry.x);
     KDF.setVal("latitude_y", marker.geometry.y);
