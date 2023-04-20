@@ -2139,7 +2139,8 @@ function structuresFeatureSetHandler(marker, featureSet) {
     KDF.setVal("asset_type", attributes["featuretypename"]);
     KDF.setVal("asset_type_id", attributes["featureid"]);
     KDF.setVal("central_asset_id", attributes["centralassetid"]);
-    KDF.setVal("asset_responsibility", "Structures");
+    // KDF.setVal("asset_responsibility", "Structures");
+    KDF.setVal("asset_responsibility", attributes["responsibility"]);
     KDF.setVal("site_name", attributes["sitename"]);
     KDF.setVal("txt_streetdescription", attributes["sitename"]);
     KDF.setVal("site_code", attributes["sitecode"]);
