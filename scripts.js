@@ -953,7 +953,7 @@ function setChannelType() {
     }
   } else if (
     KDF.getVal("txt_agentteam") === "07000000004" ||
-    KDF.getVal("txt_agentteam") === "070000000011" ||
+    KDF.getVal("txt_agentteam") === "07000000011" ||
     KDF.getVal("txt_agentteam") === "07000000012"
   ) {
     KDF.setVal("le_channel", "email_in");
