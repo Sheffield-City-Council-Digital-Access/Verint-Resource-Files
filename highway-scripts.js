@@ -2426,13 +2426,14 @@ function vegetationFeatureSetHandler(marker, featureSet) {
   if (featureSet.features.length >= 1) {
     var asset = featureSet.features[0];
     var attributes = asset.attributes;
+    console.log(attributes);
     KDF.setVal("object_id", attributes["objectid"]);
     KDF.setVal("longitude_x", marker.geometry.x);
     KDF.setVal("latitude_y", marker.geometry.y);
     KDF.setVal(
       "asset_type",
       attributes[
-        "sheffield.corpmap.HCFP_Assets_GrassPlantArea.feature_type_name"
+        "sheffield.corpmap.HCFP_Assets_GrassPlantArea.featuretypename"
       ]
     );
     KDF.setVal(
@@ -2451,11 +2452,11 @@ function vegetationFeatureSetHandler(marker, featureSet) {
     );
     KDF.setVal(
       "site_name",
-      attributes["sheffield.corpmap.HCFP_Assets_GrassPlantArea.site_name"]
+      attributes["sheffield.corpmap.HCFP_Assets_GrassPlantArea.sitename"]
     );
     KDF.setVal(
       "txt_streetdescription",
-      attributes["sheffield.corpmap.HCFP_Assets_GrassPlantArea.site_name"]
+      attributes["sheffield.corpmap.HCFP_Assets_GrassPlantArea.sitename"]
     );
     KDF.setVal(
       "site_code",
@@ -2472,10 +2473,10 @@ function vegetationFeatureSetHandler(marker, featureSet) {
       content:
         "<strong>Feature:</strong> " +
         attributes[
-          "sheffield.corpmap.HCFP_Assets_GrassPlantArea.feature_type_name"
+          "sheffield.corpmap.HCFP_Assets_GrassPlantArea.featuretypename"
         ] +
         "<br/><strong>Site Name:</strong> " +
-        attributes["sheffield.corpmap.HCFP_Assets_GrassPlantArea.site_name"],
+        attributes["sheffield.corpmap.HCFP_Assets_GrassPlantArea.sitename"],
     });
     queryCityCentre(marker);
   } else {
