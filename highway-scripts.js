@@ -2220,6 +2220,7 @@ function roadsFeatureSetHandler(marker, featureSet) {
     queryCityCentre(marker);
   } else {
     queryPavements(marker);
+    // queryPavements(marker);
   }
   vmap.centerAtLonLat({
     lon: marker.geometry.x,
@@ -2240,6 +2241,7 @@ function pavementsFeatureSetHandler(marker, featureSet) {
   if (featureSet.features.length >= 1) {
     var asset = featureSet.features[0];
     var attributes = asset.attributes;
+
     //      KDF.setVal("object_id", attributes["objectid"]);
     KDF.setVal("longitude_x", marker.geometry.x);
     KDF.setVal("latitude_y", marker.geometry.y);
@@ -2254,17 +2256,17 @@ function pavementsFeatureSetHandler(marker, featureSet) {
     } else {
       KDF.setVal("asset_responsibility", "AMEY (PFI)");
     }
-    KDF.setVal("site_name", attributes["streetname"]);
-    KDF.setVal("txt_streetdescription", attributes["streetname"]);
-    KDF.setVal("txt_fulladdress", attributes["streetname"]);
-    KDF.setVal("site_code", attributes["usrn"]);
-    KDF.setVal("txt_usrn", attributes["usrn"]);
+    KDF.setVal("site_name", attributes["sitename"]);
+    KDF.setVal("txt_streetdescription", attributes["sitename"]);
+    KDF.setVal("txt_fulladdress", attributes["sitename"]);
+    KDF.setVal("site_code", attributes["sitecode"]);
+    KDF.setVal("txt_usrn", attributes["sitecode"]);
 
     vmap.setInfoWindow({
       xcoord: marker.geometry.x,
       ycoord: marker.geometry.y,
       title: "Details",
-      content: attributes["streetname"],
+      content: attributes["sitename"],
     });
     queryCityCentre(marker);
   } else {
@@ -2284,10 +2286,10 @@ function pavementsFeatureSetHandler2(marker, featureSet) {
   if (featureSet.features.length >= 1) {
     var asset = featureSet.features[0];
     var attributes = asset.attributes;
-    KDF.setVal("site_name", attributes["streetname"]);
-    KDF.setVal("txt_streetdescription", attributes["streetname"]);
-    KDF.setVal("site_code", attributes["usrn"]);
-    KDF.setVal("txt_usrn", attributes["usrn"]);
+    KDF.setVal("site_name", attributes["sitename"]);
+    KDF.setVal("txt_streetdescription", attributes["sitename"]);
+    KDF.setVal("site_code", attributes["sitecode"]);
+    KDF.setVal("txt_usrn", attributes["sitecode"]);
   }
 }
 
