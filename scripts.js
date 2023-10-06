@@ -158,7 +158,7 @@ function searches(
     (searchtype === "CustomerProperty") |
     (searchtype === "PropertyCustomer")
   ) {
-    if (KDF.getVal("txt_customerid") == "") {
+    if (KDF.getVal("txt_customerid") === "") {
       passToSearches(
         previousform,
         previouspage,
